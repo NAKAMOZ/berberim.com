@@ -265,21 +265,23 @@
     </main>
     <script src="node_modules/animejs/lib/anime.min.js"></script>
     <script>
-      anime({
-        targets: ".circle",
-        translateY: function () {
-          return anime.random(10, 50);
-        },
-        duration: function () {
-          return anime.random(1000, 3000);
-        },
-        direction: "alternate",
-        loop: true,
-        easing: "easeInOutSine",
-        delay: function () {
-          return anime.random(0, 1000);
-        },
-      });
+      function randomValues() {
+        anime({
+          targets: ".circle",
+          translateY: function () {
+            return anime.random(-50, 100);
+          },
+          duration: function () {
+            return anime.random(1000, 3000);
+          },
+          easing: "easeInOutSine",
+          delay: function () {
+            return anime.random(100, 1000);
+          },
+          complete: randomValues,
+        });
+      }
+      randomValues();
       anime({
         targets: ".cls-1, .cls-2",
         strokeDashoffset: [anime.setDashoffset, 0],
