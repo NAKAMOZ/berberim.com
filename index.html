@@ -17,6 +17,81 @@
     <title>berberim.com</title>
   </head>
   <body>
+    <section class="gray-back" id="gray-back">
+      <div class="account">
+        <div class="account-top">
+          <h2 class="account-name">Hesap İşlemleri</h2>
+          <div id="exit-account"><i class="fa-solid fa-xmark"></i></div>
+        </div>
+        <div class="account-select">
+          <div id="kayit" class="active-button">Kayıt Ol</div>
+          <div id="giris">Giriş Yap</div>
+          <div id="active"></div>
+        </div>
+        <div class="account-form">
+          <div class="account-forms">
+            <div class="account-form-giris">
+              <form>
+                <h3
+                  style="margin-left: 5%; margin-bottom: 10px; color: #b90cd6"
+                >
+                  Giriş Yap
+                </h3>
+                <div class="inputBox">
+                  <input type="text" required="required" />
+                  <span>E-Mail</span>
+                </div>
+                <div class="inputBox">
+                  <input type="password" required="required" />
+                  <span>Şİfre</span>
+                </div>
+                <div style="padding: 10px">
+                  <input
+                    type="submit"
+                    value="Giriş Yap"
+                    class="fill_button0"
+                    style="cursor: pointer"
+                  />
+                </div>
+              </form>
+            </div>
+            <div class="account-form-kayit">
+              <form>
+                <h3
+                  style="margin-left: 5%; margin-bottom: 10px; color: #0075ff"
+                >
+                  Kayıt Ol
+                </h3>
+                <div class="inputBox">
+                  <input type="text" required="required" />
+                  <span>Ad - Soyad</span>
+                </div>
+                <div class="inputBox">
+                  <input type="text" required="required" />
+                  <span>E-Mail</span>
+                </div>
+                <div class="inputBox">
+                  <input type="password" required="required" />
+                  <span>Şİfre</span>
+                </div>
+                <div class="inputBox">
+                  <input type="password" required="required" />
+                  <span>Şİfre Tekrarı</span>
+                </div>
+                <div style="padding: 10px">
+                  <input
+                    type="submit"
+                    value="Kayıt Ol"
+                    class="fill_button"
+                    style="cursor: pointer"
+                  />
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
     <main>
       <section class="page" style="--i: 5">
         <header>
@@ -27,8 +102,10 @@
             <li><a href="#">Hakkımızda</a></li>
             <li><a href="#">Berberler</a></li>
             <li><a href="#">İletişim</a></li>
-            <li><a href="#" class="fill_button">Kayıt Ol</a></li>
-            <li><a href="#" class="border_button">Giriş Yap</a></li>
+            <li><a href="#" class="fill_button" id="kayit-ol">Kayıt Ol</a></li>
+            <li>
+              <a href="#" class="border_button" id="giris-yap">Giriş Yap</a>
+            </li>
           </ul>
         </header>
         <div class="big-circle" style="--clr: #b90cd6"></div>
@@ -282,6 +359,106 @@
         });
       }
       randomValues();
+      let accountSelectKayitDOM = document.querySelector("#kayit");
+      accountSelectKayitDOM.addEventListener("click", function () {
+        anime({
+          targets: "#active",
+          background: "#0075ff",
+          translateX: 0,
+          duration: 1000,
+          easing: "easeInOutBack",
+        });
+        anime({
+          targets: ".account-forms",
+          translateX: "-50%",
+          duration: 1000,
+          easing: "easeInOutBack",
+        });
+        anime({
+          targets: ".account-name,#exit-account",
+          color: "#0075ff",
+          duration: 1000,
+          easing: "easeInOutSine",
+        });
+      });
+      let accountSelectgirisDOM = document.querySelector("#giris");
+      accountSelectgirisDOM.addEventListener("click", function () {
+        anime({
+          targets: "#active",
+          translateX: "100%",
+          background: "#b90cd6",
+          duration: 1000,
+          easing: "easeInOutBack",
+        });
+        anime({
+          targets: ".account-forms",
+          translateX: 0,
+          duration: 1000,
+          easing: "easeInOutBack",
+        });
+        anime({
+          targets: ".account-name,#exit-account",
+          color: "#b90cd6",
+          duration: 1000,
+          easing: "easeInOutSine",
+        });
+      });
+      let girisYapDOM = document.querySelector("#giris-yap");
+      girisYapDOM.addEventListener("click", function () {
+        anime({
+          targets: ".gray-back",
+          scale: 1,
+          duration: 0,
+        });
+        anime({
+          targets: "#active",
+          translateX: "100%",
+          background: "#b90cd6",
+          duration: 0,
+        });
+        anime({
+          targets: ".account-forms",
+          translateX: 0,
+          duration: 0,
+        });
+        anime({
+          targets: ".account-name,#exit-account",
+          color: "#b90cd6",
+          duration: 0,
+        });
+      });
+      let kayitOlDOM = document.querySelector("#kayit-ol");
+      kayitOlDOM.addEventListener("click", function () {
+        anime({
+          targets: ".gray-back",
+          scale: 1,
+          duration: 0,
+        });
+        anime({
+          targets: "#active",
+          translateX: 0,
+          background: "#0075ff",
+          duration: 0,
+        });
+        anime({
+          targets: ".account-forms",
+          translateX: "-50%",
+          duration: 0,
+        });
+        anime({
+          targets: ".account-name,#exit-account",
+          color: "#0075ff",
+          duration: 0,
+        });
+      });
+      let exitAccountDOM = document.querySelector("#exit-account");
+      exitAccountDOM.addEventListener("click", function () {
+        anime({
+          targets: ".gray-back",
+          scale: 0,
+          duration: 0,
+        });
+      });
       anime({
         targets: ".cls-1, .cls-2",
         strokeDashoffset: [anime.setDashoffset, 0],
