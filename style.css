@@ -215,7 +215,7 @@ main {
 h2 {
   text-indent: -5.1vw;
   margin-left: 5vw;
-  font-size: 2vw;
+  font-size: 1.8vw;
 }
 h3 {
   margin-left: 5vw;
@@ -226,18 +226,18 @@ h3 {
   position: relative;
   top: 5vh;
   left: 5.1vw;
-  letter-spacing: 0.5vh;
   opacity: 0.7;
   color: var(--maincolor);
+  font-weight: 800;
+  font-size: 20px;
 }
 .main-alt-metin {
   font: "Open Sans", sans-serif;
   position: relative;
-  font-weight: 400;
+  font-weight: 300;
   top: 5vh;
-  letter-spacing: 0.5vh;
   opacity: 0.7;
-  color: var(--maincolor);
+  color: #292929;
 }
 .berberler {
   position: relative;
@@ -377,7 +377,7 @@ h3 {
 }
 .account {
   background-color: white;
-  width: 20vw;
+  width: 25vw;
   height: auto;
   border-radius: 25px;
   -webkit-border-radius: 25px;
@@ -394,7 +394,7 @@ h3 {
 }
 .account-name {
   float: left;
-  font-size: 17px;
+  font-size: 20px;
   flex-grow: 12;
 }
 .account-select {
@@ -402,6 +402,7 @@ h3 {
   height: 5vh+2px;
   position: relative;
   overflow: hidden;
+  box-shadow: 0px 3px 4px 0px rgb(175, 175, 175);
 }
 .account-form {
   position: relative;
@@ -422,7 +423,7 @@ h3 {
   -ms-transition: 0.5s;
   -o-transition: 0.5s;
   float: left;
-  height: 5vh;
+  height: 50px;
 }
 #active {
   width: 50%;
@@ -432,22 +433,22 @@ h3 {
 }
 .account-forms {
   width: 200%;
-  padding: 20px 0;
 }
 .account-form-kayit,
 .account-form-giris {
   width: 50%;
-  height: auto;
+  padding: 40px 30px;
+  height: 380px;
   float: left;
   display: flex;
   justify-content: center;
-  align-items: left;
   flex-direction: column;
 }
 .inputBox {
   position: relative;
-  width: 96%;
+  width: 100%;
   margin: 2%;
+  margin: 10px 0;
 }
 .inputBox input {
   width: 100%;
@@ -499,11 +500,11 @@ h3 {
 .inputBox input:focus {
   border: 2px solid var(--maincolor1);
 }
-
 .inputBox0 {
   position: relative;
-  width: 96%;
+  width: 100%;
   margin: 2%;
+  margin: 10px 0;
 }
 .inputBox0 input {
   width: 100%;
