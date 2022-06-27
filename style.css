@@ -394,7 +394,7 @@ h3 {
 }
 .account-name {
   float: left;
-  font-size: 23px;
+  font-size: 17px;
   flex-grow: 12;
 }
 .account-select {
