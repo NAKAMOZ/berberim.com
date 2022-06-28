@@ -85,15 +85,16 @@
       </div>
     </section>
     <main>
+      </section>
       <section class="page" style="--i: 5">
         <header>
           <a href="index.html" class="logo">
             <img src="./img/logo.svg" alt="berberim.comm" />
           </a>
           <ul>
-            <li><a href="#">Hakkımızda</a></li>
-            <li><a href="#">Berberler</a></li>
-            <li><a href="#">İletişim</a></li>
+            <li><a href="#pageBerberler">Berberler</a></li>
+            <li><a href="#pageHakkimizda">Hakkımızda</a></li>
+            <li><a href="#pageIletisim">İletişim</a></li>
             <li><a href="#" class="fill_button" id="kayit-ol">Kayıt Ol</a></li>
             <li>
               <a href="#" class="border_button" id="giris-yap">Giriş Yap</a>
@@ -223,7 +224,7 @@
           <span class="welcome-text"> HOŞGELDİNİZ </span>
         </span>
       </section>
-      <section class="page" style="--i: 4">
+      <section class="page" id="pageBerberler" style="--i: 4">
         <h2 class="main-baslik">Başlıca Kuaförlerimiz</h2>
         <h3 class="main-alt-metin">
           Şuan da berberim.com sayfasındaki en popüler 8 berber.
@@ -295,7 +296,7 @@
           </div>
         </section>
       </section>
-      <section class="page" style="--i: 3">
+      <section class="page" id="pageHakkimizda" style="--i: 3">
         <div class="main-bilgiler">
           <div class="main-bilgi">
             <img src="img/Barber.png" alt="Barber" class="main-resim" />
@@ -325,9 +326,57 @@
           </div>
         </div>
       </section>
+      <section class="page" id="pageIletisim">
+          
+        <div class="form_flex">
+        <div class="form-blur">
+          <div class="form">
+          <h3 style="color:#0075ff;margin-left:0;font-size:30px;opacity:0.75">İletişim</h3>
+          <div class="inputBox">
+            <input type="text" required="required" />
+            <span>İsim</span>
+          </div>
+          <div class="inputBox">
+            <input type="text" required="required" />
+            <span>Soyisim</span>
+          </div>
+          <div class="inputBox">
+            <input type="text" required="required" />
+            <span>E-Mail</span>
+          </div>
+          <div class="inputBox">
+            <textarea name="mesaj" id="mesajTextArea" required></textarea>
+            <span>Mesajınız</span>
+          </div>
+          <input
+            type="submit"
+            value="Gönder"
+            class="fill_button"
+            style="cursor: pointer; width: 100px"
+          />
+          </div>
+        </div>
+        </div>
+        <div class="bubbles"></div>
+      </section>
+      <footer class="footer page">
+        © Copyright 2022 - Works Copyright - All rights reserved
+      </footer>
     </main>
+
     <script src="node_modules/animejs/lib/anime.min.js"></script>
+    <script src="myanimate.js"></script>
     <script>
+      let bubblesDOM = document.querySelector(".bubbles");
+      let icons=["⚫","❌","🔲","⚪","🔳"]
+      for (let i = 0; i <= 100; i++) {
+        let createSpan = document.createElement("span");
+        createSpan.classList.add("bubble");
+        createSpan.style.cssText = "--i:" + Math.floor(Math.random() * 25);
+        createSpan.innerHTML = icons[Math.floor(Math.random()*5)];
+        bubblesDOM.append(createSpan);
+      }
+
       function randomValues() {
         anime({
           targets: ".circle",
