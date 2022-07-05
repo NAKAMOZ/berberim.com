@@ -377,7 +377,41 @@
         bubblesDOM.append(createSpan);
       }
 
-      function randomValues() {
+      anime({
+        targets: ".circle",
+        translateY: function () {
+          return anime.random(10, 50);
+        },
+        duration: function () {
+          return anime.random(1000, 3000);
+        },
+        direction: "alternate",
+        loop: true,
+        easing: "easeInOutSine",
+        delay: function () {
+          return anime.random(0, 1000);
+        },
+      });
+      anime({
+        targets: ".cls-1, .cls-2",
+        strokeDashoffset: [anime.setDashoffset, 0],
+        easing: "easeInOutSine",
+        duration: 1000,
+        delay: function (el, i) {
+          return i * 100;
+        },
+        direction: "alternate",
+        loop: false,
+      });
+      anime({
+        targets: ".later-text, .welcome-text",
+        opacity: 1,
+        direction: "alternate",
+        loop: false,
+        easing: "easeInOutSine",
+        duration: 1000,
+        delay: 1500,
+      });function randomValues() {
         anime({
           targets: ".circle",
           translateY: function () {
