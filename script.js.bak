@@ -6,6 +6,7 @@ anime({
         duration: function () {
           return anime.random(1000, 3000);
         },
+        direction: "alternate",
         easing: "easeInOutSine",
         delay: function () {
           return anime.random(0, 1000);
